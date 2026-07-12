@@ -1,12 +1,7 @@
 import streamlit as st
 import pickle
-try:
-    with open("weather_model.pkl", "rb") as f:
+with open("weather_model.pkl", "rb") as f:
     model = pickle.load(f)
-    st.success("✅ Model loaded successfully")
-except Exception as e:
-    st.error(f"Error loading model: {e}")
-    st.stop()
 st.set_page_config(
     page_title="Smart Weather Predictor",
     page_icon="🌦️",
